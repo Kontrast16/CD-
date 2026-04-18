@@ -13,7 +13,7 @@ func main() {
     
     for i := 0; i < 5; i++ {
         go func() {
-            fmt.Println(i)  // захват переменной цикла
+            fmt.Println(i)  // захват переменной цикл
             wg1.Done()
         }()
     }
