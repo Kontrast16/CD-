@@ -1,22 +1,19 @@
 package main
 
 import (
-    "sync"
     "testing"
 )
 
-// ЭТОТ ТЕСТ ПОКАЖЕТ ГОНКУ!
+func TestMaxInt(t *testing.T) {
+    a, b := 2, 7
 
-// А ЭТОТ ТЕСТ НЕ ПОКАЖЕТ ГОНКУ (как ваш код)
-func TestWithoutRace(t *testing.T) {
-    var wg sync.WaitGroup
-    
-    for i := 0; i < 5; i++ {
-        wg.Add(1)
-        go func() {
-            _ = i // только чтение, нет записи
-            wg.Done()
-        }()
+    res := MaxInt(a, b)
+
+    if res != b {
+        t.Errorf("expected %d, got %d", b, res)
     }
-    wg.Wait()
+}
+
+func TestMain(m *testing.M) {
+    main()
 }
