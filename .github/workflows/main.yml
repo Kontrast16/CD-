@@ -2,7 +2,7 @@ name: Go
 
 on:
   push:
-    branches: ['main, new_workflow']
+    branches: ['main', 'new_workflow']
   pull_request:
     branches: ['main']  # ← ВОТ ЭТО ВАЖНО!
     types: [opened, synchronize, reopened]
