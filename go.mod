@@ -1,3 +1,3 @@
-module test
+module testify
 
 go 1.24
